@@ -1,0 +1,1146 @@
+.f-clear {
+  clear: both;
+}
+/*
+ * 公共状态样式
+*/
+/*
+ * 销控图页面样式
+ */
+/*代售*/
+.room {
+  border-color: #c9c9c9;
+}
+.space {
+  margin-left: 25px;
+  margin-bottom: 68px;
+  clear: both;
+}
+.fix-tr-ie-bug {
+  /*这个样式不能删除，会导致IE下双梯号同时合并三层房间后错位*/
+}
+.fix-tr-ie-bug tr::before {
+  content: "　";
+}
+.fix-tr-ie-bug-fontsize0 {
+  /*IE9下需要设置为0*/
+}
+.fix-tr-ie-bug-fontsize0 tr::before {
+  font-size: 0;
+}
+.wrap-unit {
+  float: left;
+  margin-right: 4px;
+  border-radius: 3px;
+}
+.wrap-unit .table-floor {
+  border-collapse: inherit;
+  /* border-radius: 10px; */
+}
+/*#region 销控表房间 Room */
+li.room-info-td {
+  min-height: 21px;
+  height: auto;
+}
+.room-info-td {
+  height: 88px;
+  padding: 2px;
+  min-width: 140px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.room-info-td p.room-num {
+  text-align: center;
+  font-size: 20px;
+}
+.room-info-td p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  white-space: nowrap;
+  line-height: 22px;
+  height: 22px;
+  padding: 0 5px;
+  text-align: right;
+  max-width: 84px;
+  margin: 0 auto;
+}
+.room-info {
+  display: table;
+  float: left;
+  height: 100%;
+  width: 100%;
+  min-height: 21px;
+  position: relative;
+  outline: 1px solid #fff;
+  border: 1px solid #E7E7EB;
+  font-size: 12px;
+  line-height: 17px;
+  color: #222222;
+  cursor: pointer;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.room-info .room-info-wrap {
+  display: table-cell;
+  vertical-align: middle;
+  /* border: 1px red; */
+  /* border-radius:  10px; */
+}
+.room-info .room-num {
+  text-align: center;
+  display: block;
+  font-size: 36px;
+  /* border-radius: 10px; */
+}
+.room-info.room-state7 {
+  background-color: #107fff;
+  border-color: #0364fa;
+  color: #fff;
+}
+.room-info.room-state1 {
+  background-color: #fff;
+  border-color: #E7E7EB;
+  border-radius: 6px;
+}
+.room-info.room-state2 {
+  background-color: rgba(255, 98, 92, 1);
+  border-color: rgba(255, 98, 92, 1);
+  border-radius: 6px;
+  color: #fff;
+}
+.room-info.room-state3 {
+  background-color: #C6C6C6;
+  border-color: #ACACAC;
+}
+.room-info.room-state4 {
+  background-color: #F5545A;
+  border-color: #F43E43;
+  color: #fff;
+}
+.room-info.room-state5 {
+  background-color: #45B6AF;
+  border-color: #1DAEA6;
+  color: #fff;
+}
+.room-info.room-state8 {
+  background-color: #F5545A;
+  border-color: #F43E43;
+  color: #fff;
+}
+.room-info.room-state9 {
+  background-color: #D088E1;
+  border-color: #C873DB;
+  color: #fff;
+}
+.room-info.room-state20 {
+  background-color: #bdc402;
+  border-color: #b2b810;
+  color: #fff;
+}
+.room-info.room-state21 {
+  background-color: #94712e;
+  border-color: #ad8e4c;
+  color: #fff;
+}
+.room-info.room-state22 {
+  background-color: #8e70ff;
+  border-color: #7e5cfe;
+  color: #fff;
+}
+.room-info.room-state99 {
+  border-color: #7b98ac;
+  background-color: #7b98ac;
+  color: #fff;
+}
+.room-info.selected {
+  outline-color: #43E100;
+  border-color: #43E100;
+  cursor: pointer;
+}
+.room-info i.room-icon {
+  display: block;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  background-image: url(/Slxt/TradeMng/themes/default/images/sprite.png);
+  background-repeat: no-repeat;
+  font-size: 10px;
+  font-family: inherit;
+  font-style: inherit;
+  text-align: center;
+  color: #FFF;
+}
+.room-info i.room-icon-islock {
+  right: -3px;
+  top: -3px;
+  background-position: -9px -105px;
+  width: 16px;
+  height: 16px;
+}
+.room-info i.room-icon-mainRoom {
+  right: -3px;
+  top: -3px;
+  background-position: 0px -312px;
+  width: 16px;
+  height: 16px;
+}
+.room-info i.room-icon-fsRoom {
+  right: -3px;
+  top: -3px;
+  background-position: -26px -312px;
+  width: 16px;
+  height: 16px;
+}
+.room-info .room-info-edit {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  line-height: 24px;
+  background: #44B549;
+  color: #fff;
+}
+.room-info .room-info-edit:active {
+  background: ##2F9833;
+}
+.room-info-td:hover .room-info,
+.room-info-td:hover .room-empty-select {
+  /* outline-color: rgba(255, 98, 92, 1); */
+  border-color: rgba(255, 98, 92, 1);
+  cursor: pointer;
+  border-radius: 6px;
+  border-width: 2px;
+}
+.room-info-td:hover .room-info i.room-icon-islock,
+.room-info-td:hover .room-empty-select i.room-icon-islock {
+  top: -4px;
+}
+.room-info-td:hover .room-info.room-state99 {
+  border-color: #7b98ac;
+  background-color: #7b98ac;
+  color: #fff;
+  cursor: not-allowed;
+  outline: none;
+}
+/*空房间*/
+.room-empty {
+  font-size: 12px;
+  padding: 1px;
+  visibility: hidden;
+}
+/*#endregion */
+.signed-empty .signed-c-view-container {
+  display: none;
+}
+.signed-empty .signed-c-view-empty {
+  display: block;
+}
+.signed-c-view {
+  min-height: 300px;
+  background-color: #fff;
+  clear: both;
+  width: 100%;
+  min-width: 300px;
+  overflow: hidden;
+  line-height: 22px;
+}
+.signed-c-view .ux-checkbox.ux-checkbox-loading + label span,
+.signed-c-view .ux-checkbox.ux-checkbox-loading + label:after {
+  background: url("../images/controls/loading.gif") no-repeat 50% 50%;
+}
+.signed-c-view-container {
+  min-width: 900px;
+  position: relative;
+  height: 100%;
+  width: 200000px;
+}
+.signed-c-view-empty {
+  display: none;
+  height: 24px;
+  line-height: 24px;
+  padding-top: 380px;
+  text-align: center;
+  color: #999;
+  background: url("../images/blank.png") no-repeat 50% 204px;
+}
+.clearfix {
+  height: 20px;
+  clear: both;
+  margin: 0 25px;
+}
+.clearfix a {
+  margin-left: -30px;
+}
+.anchor {
+  position: relative;
+  top: -90px;
+}
+.topbar {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+.building-a {
+  margin-left: 10px;
+}
+/*#region buildingSelectToolbar */
+/*顶部楼栋选择 buildingSelect.fn,左侧下拉框zIndex:2，右侧弹出面板zIndex:2*/
+.building-sel-selbox {
+  margin-top: 3px;
+  margin-right: 10px;
+  height: 28px;
+  line-height: 30px;
+  width: 90px;
+  padding: 0 28px 0 10px;
+  cursor: pointer;
+  display: inline-block;
+  border: 1px solid #cccccc;
+  float: left;
+  position: relative;
+  z-index: 200;
+  display: none;
+}
+/*选择框图标*/
+.building-sel-selbox:after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 26px;
+  line-height: 26px;
+  background: url(/Slxt/TradeMng/themes/default/images/sprite.png) -204px -31px no-repeat;
+  top: 2px;
+  right: 0;
+  padding: 0 4px;
+}
+.building-sel-selbox:hover .selbox-checklist {
+  display: block;
+  max-height: 350px;
+  overflow-y: auto;
+}
+.building-sel-selbox .selbox-checked {
+  font-style: normal;
+  white-space: nowrap;
+  display: block;
+  overflow: hidden;
+  vertical-align: top;
+}
+.building-sel-selbox .selbox-checklist {
+  position: absolute;
+  left: -1px;
+  top: 28px;
+  border: 1px solid #cdcdcd;
+  background-color: #fff;
+  font-size: 14px;
+  z-index: 2;
+  width: 158px;
+  display: none;
+}
+.building-sel-selbox .selbox-checklist i {
+  display: none;
+}
+.building-sel-selbox .selbox-checklist li {
+  height: 32px;
+  line-height: 32px;
+  text-align: left;
+  overflow: hidden;
+}
+.building-sel-selbox .selbox-checklist li a {
+  display: block;
+  white-space: nowrap;
+  text-decoration: none;
+  color: #222;
+  padding: 0 10px;
+}
+.building-sel-selbox .selbox-checklist li a:hover,
+.building-sel-selbox .selbox-checklist li.current a {
+  background-color: #ececec;
+  color: #222;
+}
+.building-sel-tool {
+  height: 38px;
+  clear: both;
+  background-color: #e0eaf7;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+  border-bottom: 1px solid #e7e8eb;
+}
+.building-sel-tool .show {
+  display: block;
+}
+.building-sel-tool .hide {
+  display: none;
+}
+.building-sel-tool .mb-multiple:hover {
+  text-decoration: none;
+}
+.building-sel-tool.building-multi .building-sel-selbox {
+  display: none;
+}
+.building-sel-tool.building-multi .selbox-children {
+  height: 30px;
+  padding-top: 4px;
+}
+.building-sel-tool.building-multi .selbox-children > span {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  position: relative;
+  max-width: 120px;
+  cursor: pointer;
+  height: 28px;
+  margin-right: 10px;
+}
+.building-sel-tool.building-multi .selbox-children > span .bld-item {
+  line-height: 30px;
+  font-size: 12px;
+}
+.building-sel-tool.building-multi .selbox-children > span .bld-item:after {
+  visibility: hidden;
+}
+.building-sel-tool.building-multi .selbox-children > span .bld-item:hover {
+  color: #222;
+}
+.building-sel-tool.building-multi .selbox-children > span .icon-close {
+  position: absolute;
+  right: 2px;
+  top: 8px;
+  display: block;
+}
+.building-sel-tool.building-multi .selbox-children > span .icon-close:hover {
+  color: red;
+}
+.building-sel-tool.building-multi .optation-btn .mb-multiple {
+  display: none;
+}
+.building-sel-tool.building-multi .mb-wrapper {
+  display: inline-block;
+}
+.building-sel-tool .project-name {
+  float: left;
+  padding-right: 20px;
+  line-height: 38px;
+}
+.building-sel-tool .project-name.hide {
+  padding-right: 0;
+}
+.building-sel-tool.building-sel-inited .building-sel-selbox {
+  display: inline-block;
+}
+.building-sel-tool.building-mode-hide .building-sel-selbox {
+  display: none;
+}
+.building-sel-tool.building-mode-hide .mb-multiple {
+  display: none;
+}
+.building-sel-tool.building-mode-single .mb-multiple {
+  display: none;
+}
+.building-sel-tool.building-mode-multiple .building-sel-selbox {
+  display: inline-block;
+}
+.building-sel-tool.building-mode-multiple.building-multi .building-sel-selbox {
+  display: none;
+}
+.building-sel-tool .selbox-children {
+  display: inline-block;
+  vertical-align: top;
+  height: 37px;
+}
+.building-sel-tool .selbox-children > span {
+  line-height: 34px;
+  height: 100%;
+  display: block;
+  float: left;
+  width: 100px;
+  text-align: center;
+}
+.building-sel-tool .selbox-children > span > .bld-item {
+  color: #333;
+  text-decoration: none;
+  font-weight: 400;
+  display: block;
+  height: 100%;
+  margin-right: 0;
+  white-space: nowrap;
+  cursor: pointer;
+  overflow: hidden;
+  border-bottom: 2px solid transparent;
+  outline: none;
+  position: relative;
+}
+.building-sel-tool .selbox-children > span > .bld-item:after {
+  content: "|";
+  width: 2px;
+  height: 15px;
+  right: 0px;
+  position: absolute;
+  color: #c9c9c9;
+  top: 0px;
+}
+.building-sel-tool .selbox-children > span > .bld-item:hover {
+  color: #0076cd;
+}
+.building-sel-tool .selbox-children > span > .bld-item.current {
+  border-bottom: 0;
+}
+.building-sel-tool .selbox-children > span > .bld-item.current .bld-text {
+  border-bottom: 3px solid #44b549;
+}
+.building-sel-tool .selbox-children > span > .bld-item .bld-text {
+  display: block;
+  overflow: hidden;
+  font-style: normal;
+  width: 80px;
+  margin: 0 auto;
+  height: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.building-sel-tool .selbox-children > span.excess {
+  position: relative;
+  width: 24px;
+  padding-left: 8px;
+  background: none;
+  border: none;
+}
+.building-select-excessbtn {
+  background: url(/Slxt/TradeMng/themes/default/images/sprite.png) -212px -28px no-repeat;
+}
+.selbox-children-excess {
+  position: absolute;
+  top: 29px;
+  border: 1px solid #cdcdcd;
+  max-width: 450px;
+  background-color: #fff;
+  padding: 15px 13px;
+  z-index: 2;
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.2);
+  display: none;
+  max-height: 630px;
+  overflow-x: auto;
+}
+.selbox-children-excess:after {
+  content: '';
+  display: inline-block;
+  height: 0;
+  width: 0;
+  border: 9px solid #fff;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top: 0;
+  position: absolute;
+  top: -8px;
+  right: 10px;
+}
+.selbox-children-excess:before {
+  content: '';
+  display: inline-block;
+  height: 0;
+  width: 0;
+  border: 9px solid #bbb;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top: 0;
+  position: absolute;
+  top: -9px;
+  right: 10px;
+}
+.selbox-children-excess > span {
+  display: inline-block;
+  width: 98px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background-color: #fff;
+  color: #343434;
+  margin: 5px;
+  float: left;
+}
+.selbox-children-excess > span .bld-item {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 0 7px;
+  border: 1px solid #cdcdcd;
+  position: relative;
+  cursor: pointer;
+  /*&:hover,
+            &.current {
+                background-color: #44b549;
+                color: #fff;
+                border-color: #44b549;
+            }*/
+}
+.selbox-children-excess > span .bld-item .bld-text {
+  overflow: hidden;
+  font-style: normal;
+  display: block;
+}
+.selbox-children-excess > span .bld-item .icon-close {
+  display: none;
+}
+.building-sel-tool .optation-btn {
+  line-height: 37px;
+  height: 38px;
+  float: right;
+}
+.building-sel-tool .optation-btn > a,
+.building-sel-tool .optation-btn > span {
+  height: 100%;
+}
+.building-sel-tool .optation-btn .btn-item {
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 20px;
+  vertical-align: top;
+}
+.building-sel-tool .optation-btn .btn-item > .btn-text {
+  color: #3C93D7;
+}
+.building-sel-tool .optation-btn > .btn-group {
+  display: inline-block;
+  vertical-align: top;
+}
+.building-sel-tool .optation-btn .mini-radiobuttonlist .mini-list-inner {
+  margin-right: 0;
+}
+.building-sel-tool .optation-btn .mini-radiobuttonlist-item {
+  margin-right: 0;
+  margin-left: 20px;
+}
+.building-sel-tool .optation-btn .mini-radiobuttonlist-item:first-child {
+  margin-left: 0;
+}
+.building-sel-tool .optation-btn .btn-menu {
+  position: relative;
+}
+.building-sel-tool .optation-btn .btn-menu > .btn-text:after {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border: 5px solid #C6C6C6;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom: 0;
+  vertical-align: top;
+  margin-top: 17px;
+  margin-left: 5px;
+}
+.building-sel-tool .optation-btn .btn-menu > .btn-group {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 100;
+  min-width: 100%;
+  border: 1px solid #CDCDCD;
+  background-color: #fff;
+}
+.building-sel-tool .optation-btn .btn-menu .btn-item {
+  display: block;
+  margin-left: 0;
+  padding: 4px 10px;
+  line-height: 24px;
+  white-space: nowrap;
+}
+.building-sel-tool .optation-btn .btn-menu .btn-item > .btn-text {
+  color: #222;
+}
+.building-sel-tool .optation-btn .btn-menu .btn-item > .btn-text:hover {
+  text-decoration: none;
+}
+.building-sel-tool .optation-btn .btn-menu .btn-item:hover {
+  background-color: #ECECEC;
+}
+.building-sel-tool .optation-btn .btn-menu:hover > .btn-group {
+  display: block;
+}
+/*#endregion */
+/*#销控图*/
+.sale-control-table {
+  min-width: 1200px;
+}
+/*颜色枚举*/
+.saletags-pannel {
+  background-color: #fff;
+  overflow: hidden;
+  line-height: 36px;
+  height: 36px;
+  padding: 0 20px;
+}
+.saletags-pannel li {
+  float: left;
+  margin-right: 20px;
+  list-style: none;
+  font-size: 14px;
+}
+.saletags-pannel li i {
+  position: relative;
+  top: -1px;
+  display: inline-block;
+  margin-right: 10px;
+  width: 16px;
+  height: 16px;
+  border-style: solid;
+  border-width: 1px;
+  vertical-align: middle;
+  border-radius: 2px;
+}
+.saletags-pannel li i.cpresale-bg {
+  border: 1px solid #9a9a9a;
+}
+/*横向滚动条*/
+.xscrollbar {
+  height: 100%;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.xscrollbar > div {
+  height: 1px;
+}
+/*无数据权限样式*/
+/*无数据权限样式*/
+.notdata-main {
+  height: 100%;
+  min-height: 360px;
+  position: relative;
+  background: none;
+}
+.notdata-main .notdata-content {
+  width: 360px;
+  padding-top: 170px;
+  background: url(/Slxt/ProjectPrep/images/sl_wushuju.png) 50% 0 no-repeat;
+  height: 30px;
+  line-height: 30px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -180px;
+  margin-top: -100px;
+  text-align: center;
+}
+.notdata-main .notdata-top {
+  display: none;
+}
+.build-mul-wrapper {
+  width: auto;
+  clear: both;
+  overflow: hidden;
+}
+.build-mul-wrapper .signed-building-wrapper {
+  float: left;
+  margin-right: 20px;
+}
+/*清除浮动 两种方式根据具体需求自选*/
+.cf:before,
+.cf:after {
+  content: "";
+  display: table;
+}
+.cf:after {
+  clear: both;
+}
+.cf {
+  zoom: 1;
+}
+/*方式1*/
+.of {
+  overflow: hidden;
+}
+/*方式2*/
+/*表格边框合并*/
+table {
+  border-collapse: collapse;
+}
+/*浮动*/
+/*文字对齐*/
+.align_left {
+  text-align: left;
+}
+.align_center {
+  text-align: center;
+  /* border-radius:  40px; */
+}
+.align_right {
+  text-align: right;
+}
+/*超出省略号，仅限单行，并且需要设定一个宽度*/
+.info_room p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  white-space: nowrap;
+}
+.mb10 {
+  margin-bottom: 10px;
+}
+.mb20 {
+  margin-bottom: 20px;
+}
+/*head*/
+.head {
+  border-top: 4px solid #44b549;
+  height: 46px;
+  border-bottom: 1px solid #d9dadc;
+  padding: 0 20px;
+  position: relative;
+  z-index: 3;
+}
+.head-right {
+  padding-top: 6px;
+}
+.head-right > span {
+  float: left;
+  margin-left: 6px;
+}
+.head-left {
+  line-height: 46px;
+}
+.head-left .title {
+  padding-right: 30px;
+  float: left;
+}
+.showMoreLd {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+/*超出省略号，仅限单行，并且需要设定一个宽度*/
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  white-space: nowrap;
+}
+/*底部状态*/
+.state {
+  height: 74px;
+  border-top: 1px solid #e7e8eb;
+  color: #666;
+}
+.list_state li {
+  float: left;
+  margin: 15px 0px 15px 20px;
+  overflow: hidden;
+}
+.ico_state {
+  background-color: #ffffff;
+  border: 1px solid #e7e7eb;
+  height: 14px;
+  width: 14px;
+  border-radius: 1px;
+  display: block;
+  float: left;
+  margin: 2px 5px 0 0;
+}
+/*楼栋列表*/
+.content_ld {
+  padding: 0px 20px 0px 0;
+  height: 100%;
+  overflow: auto;
+}
+.cell-ld {
+  margin-left: 20px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  float: left;
+}
+.title_ld2 {
+  font-weight: bold;
+  font-size: 16px;
+  height: 30px;
+  line-height: 30px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+.title_ld2 a {
+  font-weight: normal;
+  font-size: 14px;
+  text-decoration: none;
+}
+.table-floor-top .room-info-td {
+  background-color: #f4f5f9;
+  padding: 2px 2px;
+  min-width: 54px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 25px;
+  white-space: nowrap;
+  line-height: 22px;
+  border-radius: 6px;
+}
+.table-floor {
+  /* border: 1px solid rgba(255, 139, 2, 1); */
+  border-bottom-width: 0px;
+  height: 100%;
+}
+.table-floor td {
+  color: #333;
+  /* border-bottom: 1px solid rgba(255, 139, 2, 1); */
+}
+.unit-index .wrap-ld-content {
+  padding-left: 100px;
+}
+.unit-index .room-index {
+  /* border-right: 1px solid rgba(255, 139, 2, 1); */
+  background: #f4f5f9;
+  width: 50px;
+  max-height: 100px;
+  text-align: center;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 6px;
+}
+.unit-index .room-index .floor-name {
+  width: 56px;
+  max-width: 56px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: inline-block;
+  line-height: 17px;
+  position: relative;
+  top: 2px;
+  text-align: center;
+}
+.unit-index .room-index .floor-name.checkBoxAtAfter {
+  float: left;
+  margin-left: 10px;
+}
+.unit-more.unit-index .wrap-ld-content {
+  padding-left: 173px;
+}
+.unit-more .wrap-ld-content {
+  padding-left: 113px;
+}
+.unit-more .room-more {
+  border-right: 1px solid #4fb47f;
+  background: #f4f5f9;
+  width: 112px;
+  vertical-align: top;
+  padding: 2px 0;
+}
+.unit-more .room-more p {
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  white-space: nowrap;
+  line-height: 22px;
+  height: 22px;
+  padding: 0 5px;
+  text-align: left;
+}
+.wrap-ld-content {
+  position: relative;
+}
+.title_dy {
+  background-color: #58c88d;
+  color: #fff;
+  position: relative;
+  height: 25px;
+  line-height: 25px;
+  z-index: 1;
+}
+.title_dy:after,
+.title_dy:before {
+  width: 0;
+  height: 0;
+  content: "";
+  border-style: solid;
+  border-width: 25px 25px 25px 25px;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+.title_dy:after {
+  border-color: #fff #58c88d #58c88d #58c88d;
+  right: -26px;
+}
+.title_dy:before {
+  border-color: #fff #58c88d #58c88d #58c88d;
+  left: -26px;
+}
+.roomNoClick .info_room_td .info_room {
+  cursor: default;
+}
+/*
+ * 顶部面板
+*/
+/*
+ * 底部面板
+*/
+.sale-bottompanel {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  background: #fff;
+  display: none;
+  line-height: 22px;
+}
+.sale-bottompanel .sale-state {
+  border-top: 1px solid #E5E5E5;
+  padding: 10px 20px;
+}
+/*
+ * 销售标签样式
+*/
+.sale-state {
+  display: none;
+}
+.sale-state li {
+  float: left;
+  margin-left: 24px;
+  padding-left: 24px;
+  position: relative;
+  color: #666;
+  white-space: nowrap;
+}
+.sale-state li:first-child {
+  margin-left: 0;
+}
+.sale-state .color {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 1px;
+  border-width: 1px;
+  border-style: solid;
+  position: absolute;
+  left: 0;
+  top: 2px;
+}
+.sale-state .title {
+  display: block;
+}
+.sale-state .count {
+  display: block;
+}
+.sale-state .state-7 .color {
+  background-color: #107fff;
+  border-color: #0364fa;
+  color: #fff;
+}
+.sale-state .state-1 .color {
+  background-color: #fff;
+  border-color: #E7E7EB;
+}
+.sale-state .state-2 .color {
+  background-color: #FFB848;
+  border-color: #FDAB29;
+  color: #fff;
+}
+.sale-state .state-3 .color {
+  background-color: #C6C6C6;
+  border-color: #ACACAC;
+}
+.sale-state .state-4 .color {
+  background-color: #F5545A;
+  border-color: #F43E43;
+  color: #fff;
+}
+.sale-state .state-5 .color {
+  background-color: #45B6AF;
+  border-color: #1DAEA6;
+  color: #fff;
+}
+.sale-state .state-8 .color {
+  background-color: #F5545A;
+  border-color: #F43E43;
+  color: #fff;
+}
+.sale-state .state-9 .color {
+  background-color: #D088E1;
+  border-color: #C873DB;
+  color: #fff;
+}
+.sale-state .state-20 .color {
+  background-color: #bdc402;
+  border-color: #b2b810;
+  color: #fff;
+}
+.sale-state .state-21 .color {
+  background-color: #94712e;
+  border-color: #ad8e4c;
+  color: #fff;
+}
+.sale-state .state-22 .color {
+  background-color: #8e70ff;
+  border-color: #7e5cfe;
+  color: #fff;
+}
+.sale-state .state-99 .color {
+  border-color: #7b98ac;
+  background-color: #7b98ac;
+  color: #fff;
+}
+.sale-state.sale-state-simple .count {
+  display: none;
+}
+.sale-state.sale-state-show {
+  display: block;
+}
+.infosetting-panel {
+  padding: 24px 30px;
+}
+.infosetting-panel ul {
+  width: 100%;
+}
+.infosetting-panel ul li {
+  float: left;
+  width: 33.33%;
+  padding: 6px 0;
+  text-align: left;
+}
+.infosetting-panel .miniux-checkbox label {
+  color: #222;
+}
+.cell-ld-ckb .room-index {
+  text-align: right;
+  padding-right: 3px;
+  vertical-align: top;
+  padding-top: 2px;
+}
+.cell-ld-ckb .checkbox-wrap {
+  margin-left: 6px;
+  margin-right: 2px;
+  position: relative;
+  top: 3px;
+}
+.cell-ld-ckb .room-info-td .checkbox-wrap {
+  margin-left: 3px;
+  margin-right: 2px;
+}
+.cell-ld-ckb .ux-checkbox {
+  width: 14px;
+  height: 14px;
+}
+.cell-ld-ckb .ux-checkbox + label:after,
+.cell-ld-ckb .ux-checkbox + label span {
+  top: -1px;
+  left: -15px;
+}
+.cell-ld-ckb .room-index .ux-checkbox + label:after,
+.cell-ld-ckb .room-index .ux-checkbox + label span {
+  left: -15px;
+}
+.cell-ld-more .room-info-td {
+  min-width: 100px;
+}
+/*# sourceMappingURL=pinControlChart.css.map */
