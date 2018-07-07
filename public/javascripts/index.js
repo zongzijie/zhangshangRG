@@ -1,4 +1,4 @@
-(function($,yzs) {
+(function($) {
 	$(document).ready(function(){
 		var jiaoyibtn=$("#jiaoyi");
 		jiaoyibtn.click(function(){
@@ -20,4 +20,4 @@
     //     }, false);
     // });
 
-})(jQuery,yzs)
+})(jQuery)
